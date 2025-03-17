@@ -255,7 +255,7 @@ export default function Navbar() {
                     exit="exit"
                     custom={1}
                   >
-                    let's get started
+                    Let&apos;s get started
                   </motion.h2>
                   
                   {/* Description */}
@@ -267,7 +267,7 @@ export default function Navbar() {
                     exit="exit"
                     custom={2}
                   >
-                    We love to craft the most alternative brands and wicked-fast websites on starship earth. Let's team up to delight your customers and accelerate your business!
+                    We love to craft the most alternative brands and wicked-fast websites on starship earth. Let&apos;s team up to delight your customers and accelerate your business!
                   </motion.p>
                   
                   {/* Formulaire */}
@@ -302,7 +302,7 @@ export default function Navbar() {
                     
                     <div>
                       <label className="block text-xs sm:text-sm uppercase tracking-wide text-[#a3a3a3] mb-1 sm:mb-2">
-                        WHAT'S YOUR VISION FOR THIS PROJECT?
+                        WHAT&apos;S YOUR VISION FOR THIS PROJECT?
                       </label>
                       <textarea 
                         className="w-full bg-[#131313] bg-opacity-80 border border-[#2a2a2a] rounded px-3 py-2 sm:px-4 sm:py-3 text-white h-24 sm:h-32 md:h-40 focus:outline-none focus:border-[#CDB4DB]" 

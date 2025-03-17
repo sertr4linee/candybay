@@ -13,8 +13,8 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center text-center px-4 h-screen">
         <div className="max-w-4xl mx-auto mt-24">
           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight font-['Gabarito']">
-            L'allié des visionnaires pour accélérer votre marque
-            et se tourner vers l'avenir
+            L&apos;allié des visionnaires pour accélérer votre marque
+            et se tourner vers l&apos;avenir
           </h1>
           <p className="gradient-text uppercase tracking-wider text-sm mt-8">
              APPROUVÉ PAR LES STARTUPS ET LES ENTREPRISES SOUTENUES PAR
