@@ -236,13 +236,13 @@ export default function Navbar() {
               {/* Section mobile des liens */}
               <div className="flex flex-col md:hidden h-full relative z-10">
                 {/* Conteneur principal centré verticalement */}
-                <div className="flex flex-col justify-between h-full pt-20 pb-8">
+                <div className="flex flex-col justify-between h-full pt-16 pb-6">
                   {/* Liens */}
-                  <div className="space-y-8 text-left px-8">
+                  <div className="space-y-6 text-left px-6">
                     {['WORK', 'PROCESS', 'SERVICES', 'ABOUT'].map((link) => (
                       <motion.h2 
                         key={link}
-                        className="text-6xl font-black text-[#ffffff] leading-[0.9] cursor-pointer"
+                        className="text-4xl font-black text-[#ffffff] leading-[0.9] cursor-pointer"
                         whileHover={{ 
                           color: link === 'WORK' ? '#FFB5E8' : 
                                  link === 'PROCESS' ? '#C7CEEA' : 
@@ -257,34 +257,34 @@ export default function Navbar() {
                   </div>
 
                   {/* Boutons sociaux */}
-                  <div className="px-6">
-                    <div className="bg-[#0A0A0A] rounded-3xl p-4 space-y-4">
-                      <button className="flex items-center gap-4 w-full text-white py-4 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
-                        <div className="bg-white rounded-xl p-2.5">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" strokeWidth="2">
+                  <div className="px-4">
+                    <div className="bg-[#0A0A0A] rounded-2xl p-3 space-y-3">
+                      <button className="flex items-center gap-3 w-full text-white py-3 px-3 hover:bg-[#1a1a1a] rounded-xl transition-colors">
+                        <div className="bg-white rounded-lg p-2">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="black" stroke="black" strokeWidth="2">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
                             <line x1="8" y1="2" x2="8" y2="6"></line>
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                           </svg>
                         </div>
-                        <span className="text-xl font-medium">Book a quick chat</span>
+                        <span className="text-base font-medium">Book a quick chat</span>
                       </button>
                       
-                      <button className="flex items-center gap-4 w-full text-white py-4 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
-                        <div className="bg-white rounded-xl p-2.5">
-                          <Image src="/insta.svg" alt="Instagram" width={24} height={24} />
+                      <button className="flex items-center gap-3 w-full text-white py-3 px-3 hover:bg-[#1a1a1a] rounded-xl transition-colors">
+                        <div className="bg-white rounded-lg p-2">
+                          <Image src="/insta.svg" alt="Instagram" width={20} height={20} />
                         </div>
-                        <span className="text-xl font-medium">Connect on Instagram</span>
+                        <span className="text-base font-medium">Connect on Instagram</span>
                       </button>
 
-                      <button className="flex items-center gap-4 w-full text-white py-4 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
-                        <div className="bg-white rounded-xl p-2.5">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="black">
+                      <button className="flex items-center gap-3 w-full text-white py-3 px-3 hover:bg-[#1a1a1a] rounded-xl transition-colors">
+                        <div className="bg-white rounded-lg p-2">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="black">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                           </svg>
                         </div>
-                        <span className="text-xl font-medium">Connect on X</span>
+                        <span className="text-base font-medium">Connect on X</span>
                       </button>
                     </div>
                   </div>
