@@ -235,14 +235,14 @@ export default function Navbar() {
 
               {/* Section mobile des liens */}
               <div className="flex flex-col md:hidden h-full relative z-10">
-                {/* Conteneur principal centré verticalement avec ajustement de la position */}
-                <div className="flex flex-col justify-center h-full p-6" style={{ marginTop: '-15%' }}>
+                {/* Conteneur principal centré verticalement */}
+                <div className="flex flex-col justify-between h-full pt-20 pb-8">
                   {/* Liens */}
-                  <div className="space-y-6 mb-24 text-left pl-8">
+                  <div className="space-y-8 text-left px-8">
                     {['WORK', 'PROCESS', 'SERVICES', 'ABOUT'].map((link) => (
                       <motion.h2 
                         key={link}
-                        className="text-5xl font-black text-[#ffffff] leading-[0.9] cursor-pointer"
+                        className="text-6xl font-black text-[#ffffff] leading-[0.9] cursor-pointer"
                         whileHover={{ 
                           color: link === 'WORK' ? '#FFB5E8' : 
                                  link === 'PROCESS' ? '#C7CEEA' : 
@@ -257,10 +257,10 @@ export default function Navbar() {
                   </div>
 
                   {/* Boutons sociaux */}
-                  <div className="fixed bottom-32 left-0 right-0 px-6">
-                    <div className="bg-[#0A0A0A] rounded-2xl p-4 space-y-4 border border-[#1a1717]">
-                      <button className="flex items-center gap-4 w-full text-white py-3 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
-                        <div className="bg-white rounded-lg p-2">
+                  <div className="px-6">
+                    <div className="bg-[#0A0A0A] rounded-3xl p-4 space-y-4">
+                      <button className="flex items-center gap-4 w-full text-white py-4 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
+                        <div className="bg-white rounded-xl p-2.5">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="black" strokeWidth="2">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -268,23 +268,23 @@ export default function Navbar() {
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                           </svg>
                         </div>
-                        <span className="text-lg font-medium">Book a quick chat</span>
+                        <span className="text-xl font-medium">Book a quick chat</span>
                       </button>
                       
-                      <button className="flex items-center gap-4 w-full text-white py-3 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
-                        <div className="bg-white rounded-lg p-2">
+                      <button className="flex items-center gap-4 w-full text-white py-4 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
+                        <div className="bg-white rounded-xl p-2.5">
                           <Image src="/insta.svg" alt="Instagram" width={24} height={24} />
                         </div>
-                        <span className="text-lg font-medium">Connect on Instagram</span>
+                        <span className="text-xl font-medium">Connect on Instagram</span>
                       </button>
 
-                      <button className="flex items-center gap-4 w-full text-white py-3 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
-                        <div className="bg-white rounded-lg p-2">
+                      <button className="flex items-center gap-4 w-full text-white py-4 px-4 hover:bg-[#1a1a1a] rounded-xl transition-colors">
+                        <div className="bg-white rounded-xl p-2.5">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="black">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                           </svg>
                         </div>
-                        <span className="text-lg font-medium">Connect on X</span>
+                        <span className="text-xl font-medium">Connect on X</span>
                       </button>
                     </div>
                   </div>
