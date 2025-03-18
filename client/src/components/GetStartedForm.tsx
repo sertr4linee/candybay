@@ -18,8 +18,8 @@ export default function GetStartedForm() {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto my-8">
-      <div className="bg-[#131313] rounded-3xl p-6 border border-[#1a1717] relative">
+    <div className="w-full max-w-lg mx-auto">
+      <div className="bg-[#131313] rounded-3xl p-4 md:p-6 border border-[#1a1717] relative">
         {/* Slider */}
         <div className="absolute right-3 top-4 bottom-4 w-1 rounded-full bg-gradient-to-b from-[#FFB5E8] via-[#FFDAC1] to-[#B5EAD7]">
           <motion.div 
@@ -36,7 +36,7 @@ export default function GetStartedForm() {
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
-          className="bg-[#131313] rounded-2xl p-6 h-[600px] overflow-y-auto hide-scrollbar pr-8"
+          className="bg-[#131313] rounded-2xl p-4 md:p-6 h-[500px] md:h-[600px] overflow-y-auto hide-scrollbar pr-6 md:pr-8"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none'
