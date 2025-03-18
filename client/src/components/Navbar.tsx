@@ -90,8 +90,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-10 bg-[#080808] border-b border-[#1a1717] py-4 sm:py-6 md:py-8 font-['Gabarito',_sans-serif]">
-        <div className="container mx-auto px-4 flex justify-between items-center">
+      <header className="fixed top-0 left-0 right-0 z-10 bg-[#080808] border-b border-[#1a1717] py-6 sm:py-8 font-['Gabarito',_sans-serif]">
+        <div className="container mx-auto px-6 flex justify-between items-center">
           {/* Logo - aligné à gauche */}
           <div 
             className="flex items-center cursor-pointer"
@@ -110,7 +110,13 @@ export default function Navbar() {
                 ease: "easeInOut"
               }}
             >
-              <Image src="/icon.svg" alt="Logo" width={150} height={150} className="w-24 sm:w-32 md:w-40" />
+              <Image 
+                src="/icon.svg" 
+                alt="Logo" 
+                width={150} 
+                height={150} 
+                className="w-32 sm:w-36 md:w-40" 
+              />
             </motion.div>
           </div>
 
@@ -170,7 +176,7 @@ export default function Navbar() {
 
           {/* Bouton START - aligné à droite */}
           <button 
-            className="bg-white text-black font-black py-1.5 px-3 sm:py-2 sm:px-4 rounded-2xl flex items-center transition-colors text-sm md:text-lg"
+            className="bg-white text-black font-black py-2.5 px-6 sm:py-3 sm:px-8 rounded-2xl flex items-center transition-colors text-base sm:text-lg"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             onClick={() => setIsModalOpen(true)}
@@ -185,14 +191,14 @@ export default function Navbar() {
                 duration: 0.6,
                 ease: "easeInOut"
               }}
-              className="mr-1 sm:mr-2"
+              className="mr-2 sm:mr-3"
             >
               <Image 
                 src="/wandd.svg" 
                 alt="Magic Wand" 
-                width={20} 
-                height={20} 
-                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 invert-0" 
+                width={24} 
+                height={24} 
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 invert-0" 
               />
             </motion.div>
             START
