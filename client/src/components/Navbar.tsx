@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ParticleBackground from './ParticleBackground'
+import GetStartedForm from './GetStartedForm'
 
 export default function Navbar() {
   const [isHovering, setIsHovering] = useState(false);
@@ -66,26 +67,26 @@ export default function Navbar() {
   };
 
   // Animation pour les éléments du contenu de la modale
-  const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (custom: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: custom * 0.1,
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }),
-    exit: (custom: number) => ({
-      opacity: 0,
-      y: 20,
-      transition: {
-        delay: 0.05 * custom,
-        duration: 0.3
-      }
-    })
-  };
+  // const contentVariants = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: (custom: number) => ({
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       delay: custom * 0.1,
+  //       duration: 0.5,
+  //       ease: "easeOut"
+  //     }
+  //   }),
+  //   exit: (custom: number) => ({
+  //     opacity: 0,
+  //     y: 20,
+  //     transition: {
+  //       delay: 0.05 * custom,
+  //       duration: 0.3
+  //     }
+  //   })
+  // };
 
   return (
     <>
@@ -117,7 +118,7 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center space-x-4">
             <Link 
               href="#work" 
-              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold ${
+              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold hover:text-[#FFB5E8] transition-colors duration-300 ${
                 hoveredLink === 'work' ? 'text-white' : 'text-[#828282]'
               }`}
               onMouseEnter={() => setHoveredLink('work')}
@@ -127,7 +128,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="#process" 
-              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold ${
+              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold hover:text-[#AEC6CF] transition-colors duration-300 ${
                 hoveredLink === 'process' ? 'text-white' : 'text-[#828282]'
               }`}
               onMouseEnter={() => setHoveredLink('process')}
@@ -137,7 +138,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="#services" 
-              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold ${
+              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold hover:text-[#B5EAD7] transition-colors duration-300 ${
                 hoveredLink === 'services' ? 'text-white' : 'text-[#828282]'
               }`}
               onMouseEnter={() => setHoveredLink('services')}
@@ -147,7 +148,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="#about" 
-              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold ${
+              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold hover:text-[#C7CEEA] transition-colors duration-300 ${
                 hoveredLink === 'about' ? 'text-white' : 'text-[#828282]'
               }`}
               onMouseEnter={() => setHoveredLink('about')}
@@ -157,7 +158,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="#contact" 
-              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold ${
+              className={`transition-all px-3 py-1.5 rounded text-sm bg-[#131313] font-extrabold hover:text-[#FFDAC1] transition-colors duration-300 ${
                 hoveredLink === 'contact' ? 'text-white' : 'text-[#828282]'
               }`}
               onMouseEnter={() => setHoveredLink('contact')}
@@ -215,112 +216,97 @@ export default function Navbar() {
             
             {/* Contenu de la modale */}
             <motion.div 
-              className="fixed inset-0 bg-[#000000] z-50 shadow-2xl flex flex-col overflow-hidden font-['Gabarito',_sans-serif]"
+              className="fixed inset-0 bg-[#000000] z-50 shadow-2xl flex overflow-hidden font-['Gabarito',_sans-serif]"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              {/* Arrière-plan avec particules */}
+              {/* Fond avec particules */}
               <div className="absolute inset-0 z-0">
                 <ParticleBackground />
               </div>
-              
-              {/* Bouton de fermeture corrigé */}
-              <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 p-2 sm:p-4">
-                <button 
-                  className="bg-gray-800 bg-opacity-70 hover:bg-gray-700 text-white p-2 sm:p-3 rounded-full"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setIsModalOpen(false);
-                  }}
-                  aria-label="Close modal"
+
+              {/* Section gauche avec les liens */}
+              <div className="w-1/2 h-full flex flex-col p-20 relative z-10">
+                <motion.div
+                  className="space-y-4 mt-20"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </button>
-              </div>
-              
-              {/* Contenu centré */}
-              <div className="flex-1 flex items-center justify-center relative z-10 p-4">
-                <div className="max-w-3xl w-full px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
-                  {/* Titre avec dégradé */}
                   <motion.h2 
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6 md:mb-8"
-                    variants={contentVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    custom={1}
+                    className="text-[100px] font-black text-[#333333] leading-[0.9] cursor-pointer"
+                    whileHover={{ 
+                      color: '#FFB5E8',
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
+                    }}
                   >
-                    Let&apos;s get started
+                    WORK
                   </motion.h2>
-                  
-                  {/* Description */}
-                  <motion.p 
-                    className="text-gray-300 text-base sm:text-lg mb-6 sm:mb-8 md:mb-12 max-w-2xl"
-                    variants={contentVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    custom={2}
+                  <motion.h2 
+                    className="text-[100px] font-black text-[#333333] leading-[0.9] cursor-pointer"
+                    whileHover={{ 
+                      color: '#C7CEEA',
+                      scale: 1.02, 
+                      transition: { duration: 0.3 }
+                    }}
                   >
-                    We love to craft the most alternative brands and wicked-fast websites on starship earth. Let&apos;s team up to delight your customers and accelerate your business!
-                  </motion.p>
-                  
-                  {/* Formulaire */}
-                  <motion.div 
-                    className="flex flex-col space-y-4 sm:space-y-6 md:space-y-8"
-                    variants={contentVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    custom={3}
+                    PROCESS
+                  </motion.h2>
+                  <motion.h2 
+                    className="text-[100px] font-black text-[#333333] leading-[0.9] cursor-pointer"
+                    whileHover={{ 
+                      color: '#B5EAD7',
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
+                    }}
                   >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                      <div>
-                        <label className="block text-xs sm:text-sm uppercase tracking-wide text-[#a3a3a3] mb-1 sm:mb-2">
-                          YOUR NAME
-                        </label>
-                        <input 
-                          type="text" 
-                          className="w-full bg-[#131313] bg-opacity-80 border border-[#2a2a2a] rounded px-3 py-2 sm:px-4 sm:py-3 text-white focus:outline-none focus:border-[#FFAFCC]" 
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm uppercase tracking-wide text-[#a3a3a3] mb-1 sm:mb-2">
-                          YOUR EMAIL
-                        </label>
-                        <input 
-                          type="email" 
-                          className="w-full bg-[#131313] bg-opacity-80 border border-[#2a2a2a] rounded px-3 py-2 sm:px-4 sm:py-3 text-white focus:outline-none focus:border-[#A2D2FF]" 
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-xs sm:text-sm uppercase tracking-wide text-[#a3a3a3] mb-1 sm:mb-2">
-                        WHAT&apos;S YOUR VISION FOR THIS PROJECT?
-                      </label>
-                      <textarea 
-                        className="w-full bg-[#131313] bg-opacity-80 border border-[#2a2a2a] rounded px-3 py-2 sm:px-4 sm:py-3 text-white h-24 sm:h-32 md:h-40 focus:outline-none focus:border-[#CDB4DB]" 
-                      ></textarea>
-                    </div>
-                    
-                    <div>
-                      <motion.button 
-                        className="bg-white text-black font-black py-2 px-4 sm:py-3 sm:px-6 md:px-8 rounded-full hover:opacity-90 transition-opacity text-sm sm:text-base"
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                      >
-                        SEND MESSAGE
-                      </motion.button>
-                    </div>
-                  </motion.div>
+                    SERVICES
+                  </motion.h2>
+                  <motion.h2 
+                    className="text-[100px] font-black text-[#333333] leading-[0.9] cursor-pointer"
+                    whileHover={{ 
+                      color: '#FFDAC1',
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    ABOUT
+                  </motion.h2>
+                </motion.div>
+
+                {/* Adresses en bas */}
+                <div className="absolute bottom-20 left-20 text-[#666666] flex space-x-12">
+                  <div>
+                    <h3 className="font-bold text-extrabold mb-2 text-white">Nice</h3>
+                    <p className="text-sm opacity-60">131 bd rené cassin</p>
+                    <p className="text-sm opacity-60">Alpes-Maritimes, France</p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-extrabold mb-2 text-white">Amsterdam</h3>
+                    <p className="text-sm opacity-60">straatjesstraat 12</p>
+                    <p className="text-sm opacity-60">Netherlands</p>
+                  </div>
                 </div>
               </div>
+
+              {/* Section droite avec le formulaire */}
+              <div className="w-1/2 h-full flex items-center justify-center relative z-10 ">
+                <GetStartedForm />
+              </div>
+
+              {/* Bouton de fermeture */}
+              <button 
+                className="absolute top-6 right-6 text-white p-2 rounded-sm z-20 hover:opacity-70 transition-opacity border border-white"
+                onClick={() => setIsModalOpen(false)}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </motion.div>
           </>
         )}
